@@ -7,10 +7,7 @@ import io
 app = Flask(__name__)
 
 # Load the pre-trained pipeline model
-from pathlib import Path
-
-model_path = Path(__file__).resolve().parent / "superkart_model.joblib"
-model = joblib.load(model_path)
+model = joblib.load("superkart_model.joblib")
 
 @app.route("/v1/predict", methods=["POST"])
 def predict():
